@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D9D9E4E-0333-43CB-98B1-B5765E6BC09A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiTier.Common</RootNamespace>
+    <AssemblyName>MultiTier.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DryIoc">
+      <HintPath>..\packages\DryIoc.dll.2.4.3\lib\net45\DryIoc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DryIocBootStarpper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MultiTier.Domain\MultiTier.Domain.csproj">
+      <Project>{217ffbbb-aa22-44fe-95f0-b5edbde536e2}</Project>
+      <Name>MultiTier.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiTier.Models\MultiTier.Models.csproj">
+      <Project>{f6fc25f4-1d2d-4bdb-91ce-f6d4845ef410}</Project>
+      <Name>MultiTier.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiTier.Security.Implementations\MultiTier.Security.Implementations.csproj">
+      <Project>{9cb37ca6-aa90-40e3-b875-f9d30d252abe}</Project>
+      <Name>MultiTier.Security.Implementations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiTier.Security.Interfaces\MultiTier.Security.Interfaces.csproj">
+      <Project>{8219ff6a-cc79-4c4a-81b6-4cfa6945b66a}</Project>
+      <Name>MultiTier.Security.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiTier.Service.Implementations\MultiTier.Service.Implementations.csproj">
+      <Project>{93daa23a-3c05-4b8c-97c5-bd7cf551fca4}</Project>
+      <Name>MultiTier.Service.Implementations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiTier.Service.Interfaces\MultiTier.Service.Interfaces.csproj">
+      <Project>{e48a3da6-75c4-4e3c-b28d-4bdbe52f734e}</Project>
+      <Name>MultiTier.Service.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
